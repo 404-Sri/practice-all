@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-map-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom: # here we are asking to take the reference from 09-config-map.yaml file
+    - configMapRef: 
+        name: pod-config
